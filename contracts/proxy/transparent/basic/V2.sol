@@ -4,13 +4,27 @@ pragma solidity 0.8.20;
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 
 contract V2 is Initializable {
-   uint256 public number;
+    // V1 storage
+    // This slot will be shared with next versions of the contract
+    uint256 public number;
 
-   function increase() external {
-       number += 2;
-   }
+    // Important!
+    // If you add new state variables, you should add them after the existing ones.
+    // Otherwise, Solidity will overwrite the existing variables.
 
-   function decrease() external {
-       number -= 1;
-   }
+    // V2 storage
+    // This slot will be shared with next versions of the contract
+    string public text;
+
+    function increase() external {
+        number += 2;
+    }
+
+    function decrease() external {
+        number -= 1;
+    }
+
+    function setText(string memory _text) external {
+        text = _text;
+    }
 }
