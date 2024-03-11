@@ -6,10 +6,6 @@ import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 contract V2 is Initializable {
    uint256 public number;
 
-   function initialize(uint256 _number) external initializer {
-       number = _number;
-   }
-
    function increase() external {
        number += 2;
    }
