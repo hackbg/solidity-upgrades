@@ -3,7 +3,7 @@ pragma solidity 0.8.20;
 
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 
-contract V2 is Initializable {
+contract ContractV2 is Initializable {
     // V1 storage
     // This slot will be shared with next versions of the contract
     uint256 public number;

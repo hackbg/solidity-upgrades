@@ -5,7 +5,7 @@ describe("Cotnract V1 (Proxy)", function () {
   let contractV1;
 
   beforeEach(async function () {
-    ContractV1 = await ethers.getContractFactory("V1");
+    ContractV1 = await ethers.getContractFactory("ContractV1");
     contractV1 = await upgrades.deployProxy(ContractV1, [42], {
       initializer: "initialize",
     });
